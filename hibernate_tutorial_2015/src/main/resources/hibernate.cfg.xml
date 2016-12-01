@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Using the MySQL database -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- Specifiying the MySQL Driver, imported from pom.xml -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <!-- Updates and creates the tables -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Assume test is the database name, connect to it -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/test</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">pwd</property>
+
+        <!-- List of XML mapping files (Employee class)
+             The xml configuration for the class should be stored in the resources path in the same configuration path
+             of the class -->
+        <mapping resource="it/db/bergamigiacomo/mysql/Employee.hbm.xml"/>
+
+    </session-factory>
+</hibernate-configuration>
