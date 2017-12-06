@@ -1,5 +1,7 @@
 package it.giacomobergami.jdbc;
 
+import com.mysql.cj.mysqlx.protobuf.MysqlxDatatypes;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;

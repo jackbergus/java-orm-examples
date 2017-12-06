@@ -52,6 +52,10 @@ public class JDBCInsert {
                     ps.executeBatch();
                 }
             }
+            if(++count % batchSize == 0) {
+                //Send some data to the relational database.
+                ps.executeBatch();
+            }
 
             ps.close(); //close the statement
 

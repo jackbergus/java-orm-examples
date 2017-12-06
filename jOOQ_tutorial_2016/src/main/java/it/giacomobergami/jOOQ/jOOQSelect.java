@@ -26,7 +26,7 @@ public class jOOQSelect {
             DSLContext create = DSL.using(transaction, SQLDialect.MYSQL);
 
             create.select(Tables.EMPLOYEES_.FIRST_NAME,Tables.EMPLOYEES_.LAST_NAME)
-                    .from(Tables.EMPLOYEES_)
+                    .from(Tables.EMPLOYEES_, Tables.DEPARTMENTS)
                     .limit(5)
                     .fetchInto(Tables.EMPLOYEES_).forEach( er -> System.out.println(er.getFirstName()+" "+er.getLastName()));
         }

@@ -31,7 +31,7 @@ public class jOOQJoin {
         // Serialization method
         @Override
         public String toString() {
-            return MrMrs +" "+name+" "+ surname+","+title+".\n";
+            return "Hello, "+ MrMrs +" "+name+" "+ surname+","+title+"!\n";
         }
     }
 
@@ -44,6 +44,7 @@ public class jOOQJoin {
                     .from(Tables.EMPLOYEES_)
                     .join(Tables.TITLES)
                     .onKey()
+                    .limit(10)
                     .fetchInto(ResultClass.class)
                     .forEach(System.out::print); // Using Java 8 Streams alongside with lambdas
         }
